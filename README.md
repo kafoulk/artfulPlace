@@ -1,4 +1,4 @@
-# Artful Place — Vite + React + Firebase Demo
+# Artful Place: Vite + React + Firebase Demo
 
 This repository contains a minimal Vite + React app with Firebase (Firestore + Auth) initialized inside `src/App.jsx` to fit a single-file constraint while preserving the recommended architecture.
 
