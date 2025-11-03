@@ -32,3 +32,7 @@ Notes
 - For production, move Firebase initialization to `src/services/firebase.js`, auth hooks to `src/hooks/useAuth.js`, and pages to `src/pages/`.
 - Add Tailwind or other styling as needed.
 - Ensure Firestore rules allow the operations you perform during development.
+
+
+
+

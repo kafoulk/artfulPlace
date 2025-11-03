@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { FirebaseProvider } from './context/FirebaseContext'
 import GalleryScreen from './screens/GalleryScreen'
@@ -31,4 +31,54 @@ export default function App() {
       </BrowserRouter>
     </FirebaseProvider>
   )
+} */
+
+ 
+import { Routes, Route, Link } from "react-router-dom";
+import LoginScreen from "./screens/LoginScreen";
+import SignupScreen from "./screens/SignupScreen";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { useAuth } from "./context/AuthContext";
+
+function Home() {
+  const { user, logout } = useAuth();
+
+  return (
+    <div style={{ padding: "24px" }}>
+      <h2>Welcome, {user?.displayName || user?.email}</h2>
+      <p>Home protected screen</p>
+      <button onClick={logout}>Logout</button>
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+   
+      <Route path="/login" element={<LoginScreen />} />
+      <Route path="/signup" element={<SignupScreen />} />
+
+     
+      <Route
+        path="/"
+        element={
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        }
+      />
+
+      
+      <Route
+        path="*"
+        element={
+          <div style={{ padding: 24 }}>
+            <h3>Page Not Found</h3>
+            <Link to="/">Go Home</Link>
+          </div>
+        }
+      />
+    </Routes>
+  );
 }
