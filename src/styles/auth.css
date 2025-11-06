@@ -136,6 +136,7 @@ margin-top: -100px;}
 .signup-button{
   height: 50px;
   border-radius: 8px;
+  margin-top: 15px;
   width: 100%;
   background: var(--color-primary);
   color: #FFF;
