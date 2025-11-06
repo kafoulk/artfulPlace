@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 
 export default function ConfirmationModal({ open, title, message, onConfirm, onCancel }) {
   if (!open) return null
@@ -15,3 +15,4 @@ export default function ConfirmationModal({ open, title, message, onConfirm, onC
     </div>
   )
 }
+ */

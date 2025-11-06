@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+/* import React, { useEffect, useState } from 'react'
 import { useFirebase } from '../context/FirebaseContext'
 import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore'
 
@@ -85,3 +85,4 @@ export default function GalleryScreen() {
     </div>
   )
 }
+ */

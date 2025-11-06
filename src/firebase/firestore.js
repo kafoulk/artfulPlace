@@ -1,4 +1,4 @@
-import { getFirestore, collection, addDoc, getDocs, doc, getDoc, setDoc, query, orderBy, limit, serverTimestamp, onSnapshot } from 'firebase/firestore'
+/* import { getFirestore, collection, addDoc, getDocs, doc, getDoc, setDoc, query, orderBy, limit, serverTimestamp, onSnapshot } from 'firebase/firestore'
 
 // Determine appId from injected firebase config or fallback
 const APP_ID = (typeof window !== 'undefined' && window.__firebase_config && window.__firebase_config.projectId) ? window.__firebase_config.projectId : 'artful-place'
@@ -56,3 +56,4 @@ export function subscribeToArtworks(dbInstance, onUpdate, limitCount = 100) {
   }, (err) => onUpdate(err, []))
   return unsub
 }
+ */

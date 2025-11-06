@@ -1,4 +1,4 @@
-import { getAuth, signInWithCustomToken, signInAnonymously, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+/* import { getAuth, signInWithCustomToken, signInAnonymously, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
 
 // Helpers accept an auth instance when available. Return standardized { user, error }.
 export async function signIn(authInstance, token) {
@@ -33,3 +33,4 @@ export async function signOutUser(authInstance) {
   const auth = authInstance || getAuth()
   try { await signOut(auth); return { success: true } } catch (err) { return { success: false, error: err } }
 }
+ */

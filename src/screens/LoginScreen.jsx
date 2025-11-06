@@ -2,7 +2,10 @@ import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/artfulplace-logo.png"; 
+import googleIcon from "../assets/google.svg";
 
+
+// Login screen component
 export default function LoginScreen() {
 
   const { login, loginWithGoogle } = useAuth();
@@ -10,9 +13,11 @@ export default function LoginScreen() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
 
+  // Handle form submission
  const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    
     try {
       await login(form.email, form.password);
       navigate("/");
@@ -21,22 +26,17 @@ export default function LoginScreen() {
     }
   };
 
+  // Render the login form
   return (
     
     
-    <div
-      id="login-root"
-      className="login-root"                 
-      data-screen="login"
-      aria-label="Login screen"
-    >
+    <div id="login-root" className="login-root" data-screen="login"  aria-label="Login screen" >
      
       <div
         id="login-card"
         className="login-card"              
         role="region"
-        aria-labelledby="login-card-title"
-      >
+        aria-labelledby="login-card-title">
         
         <header className="login-header">
           <img
@@ -49,9 +49,10 @@ export default function LoginScreen() {
           </h1>
          
        <p className="login-subtitle">
-            Reality, Reimagined by Art. The revolutionary AR platform for
-            sharing creative achievements & inspiration in real-time.
+            Reality, Reimagined by Art. 
           </p>
+          <p className="login-subtitle2">The revolutionary AR platform for
+            sharing creative achievements & inspiration in real-time.</p>
         </header>
 
         
@@ -111,35 +112,26 @@ export default function LoginScreen() {
         </div>
 
        
-   <button
-          type="button"
-          className="login-google-button"    
-          onClick={async () => {
-
-            setError("");
-            try {
-              await loginWithGoogle();
-              navigate("/");
-            } catch (err) {
-              setError(err.message || "Google sign-in failed");
-            }
-
-          }}
-          data-provider="google"
-        >
-        
-          <span className="login-google-icon" aria-hidden="true" />
-          Continue with Google
-        </button>
-
-        
-        {error ? (
-
-          <p className="login-error" role="alert" data-type="error">
-            {error}
-          </p>
-        ) : null}
-
+  <button
+  type="button"
+  className="login-google-button"
+  aria-label="Continue with Google"            
+  onClick={async () => {
+    setError("");
+    try {
+      await loginWithGoogle();
+      navigate("/");
+    } catch (err) {
+      setError(err.message || "Google sign-in failed");
+    }
+  }}
+>
+  <span
+    className="login-google-icon"
+    aria-hidden="true"
+    style={{ backgroundImage: `url(${googleIcon})` }}  
+  />
+</button>
         
  <p className="login-footer-text">
           Don’t have an account?{" "}

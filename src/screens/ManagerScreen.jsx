@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+/* import React, { useEffect, useState } from 'react'
 import { useFirebase } from '../context/FirebaseContext'
 import { addArtwork, subscribeToArtworks } from '../firebase/firestore'
 import { startSketchfabAuth, uploadModelToSketchfab } from '../sketchfab/client'
@@ -80,4 +80,4 @@ export default function ManagerScreen() {
       </div>
     </div>
   )
-}
+} */

@@ -3,21 +3,23 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Artful Place</title>
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin-allow-popups" />
+
+    <title>ARtful Place</title>
+    
+    <!-- // favicon -->
+    <link rel="icon" type="image" href="./src/assets/artfulplaceicon.png" />
+
+    <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+
   </head>
   <body>
     <div id="root"></div>
-    <script>
-  window.__firebase_config = {
-    apiKey: "AIzaSyAX8jv0B4ZcC4RfuqvIBSM2P1VxQWljqeo",
-    authDomain: "artful-place.firebaseapp.com",
-    projectId: "artful-place",
-    // ...other config
-    
-  };
-  // optional: provide a custom token to sign in
-  // window.__initial_auth_token = 'eyJhbGci...'
-    </script>
+   
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

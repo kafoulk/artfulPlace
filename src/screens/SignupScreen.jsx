@@ -2,12 +2,18 @@ import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/artfulplace-logo.png";
+import googleIcon from "../assets/google.svg";
 
+
+// Signup screen component
 export default function SignupScreen() {
 
+  // State and hooks
   const { signup, loginWithGoogle } = useAuth();
   const navigate = useNavigate();
 
+
+  // Form state
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -16,8 +22,11 @@ export default function SignupScreen() {
   }
 );
 
+// Error state
   const [error, setError] = useState("");
 
+
+  // Handle form submission
 const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -33,6 +42,7 @@ const handleSubmit = async (e) => {
 
   };
 
+  // Render the signup form
   return (
 
     <div id="signup-root" className="signup-root" aria-label="Signup screen">
@@ -49,13 +59,14 @@ const handleSubmit = async (e) => {
             Create your account
           </h1>
           <p className="signup-subtitle">
-Reality, Reimagined by Art. The revolutionary AR platform for
-            sharing creative achievements & inspiration in real-time.          </p>
+Reality, Reimagined by Art.          </p>
+<p className="signup-subtitle2"> The revolutionary AR platform for
+            sharing creative achievements & inspiration in real-time. </p>
    </header>
 
         <form className="signup-form" onSubmit={handleSubmit} noValidate>
         
-          <label htmlFor="name" className="signup-label">First Name</label>
+          <label className="signup-label">First Name</label>
         
         <input
             id="name"
@@ -99,11 +110,27 @@ Reality, Reimagined by Art. The revolutionary AR platform for
           <span className="signup-separator-text">Or</span>
        
  </div>
-
-        <button
-          type="button"
-          onClick={loginWithGoogle}
-          className="signup-google-button" > Continue with Google </button>
+{/* // google signup button */}
+     <button
+  type="button"
+  onClick={async () => {
+    setError("");
+    try {
+      await loginWithGoogle();
+      navigate("/", { replace: true });  
+    } catch (err) {
+      setError(err.message || "Google sign-in failed");
+    }
+  }}
+  className="signup-google-button"
+>
+  <span
+      className="signup-google-icon"
+      aria-hidden="true"
+      style={{ backgroundImage: `url(${googleIcon})` }}  
+    />
+ 
+</button>
 
         {error && <p className="signup-error">{error}</p>}
 

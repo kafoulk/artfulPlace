@@ -7,3 +7,35 @@ password: artfulplace2025
 firebase account
 
 log in with gmail: artfulplace07@gmail.com
+
+
+==============================================================================
+- Fonts:
+Embed code in the <head> of your html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+==============================================================================
+
+
+navbar
+I used as reference this option i fund in google:
+https://www.google.com/search?q=how+create+a+nav+bar+in+react+vite&sca_esv=450f4d81728ff678&sxsrf=AE3TifMhLtp-9vzLNi1zr2ju3Qm6-ZAq3A%3A1762202265878&ei=mRIJaceoNb2x6-AP2I6zsA4&ved=0ahUKEwiH2dGA69aQAxW92BoGHVjHDOYQ4dUDCBE&uact=5&oq=how+create+a+nav+bar+in+react+vite&gs_lp=Egxnd3Mtd2l6LXNlcnAiImhvdyBjcmVhdGUgYSBuYXYgYmFyIGluIHJlYWN0IHZpdGUyBxAjGLACGCcyBhAAGBYYHjIFEAAY7wUyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogQyCBAAGIAEGKIESNAhUKUOWMUecAB4ApABAZgBxwGgAe8PqgEEMTkuM7gBA8gBAPgBAZgCCKACywXCAgQQABhHmAMA4gMFEgExIECIBgGQBgiSBwM2LjKgB7WvAbIHAzUuMrgHxgXCBwUwLjUuM8gHFA&sclient=gws-wiz-serp

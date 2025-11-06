@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
+//  web apps Firebase configuration
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -12,8 +13,10 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
+// Log variables for debugging
 console.log("[ENV] API_KEY:", import.meta.env.VITE_FIREBASE_API_KEY);
 
+// Log entire config for verification
 console.log("[ENV] CONFIG:", {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -26,9 +29,12 @@ console.log("[ENV] CONFIG:", {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
+// Initialize Firebase Authentication and Firestore
 export const auth = getAuth(app);
-
+// Initialize Firestore database
 export const db = getFirestore(app);
-
+// Set up Google Auth Provider
 export const googleProvider = new GoogleAuthProvider();
+
+// parameters for Google Auth
+googleProvider.setCustomParameters({ prompt: "select_account" });

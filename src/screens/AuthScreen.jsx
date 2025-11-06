@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+/* import React, { useState } from 'react'
 import { useFirebase } from '../context/FirebaseContext'
 import { signIn, signUpWithEmail, signInWithEmailHelper, signOutUser } from '../firebase/auth'
 
@@ -67,4 +67,4 @@ export default function AuthScreen() {
       {msg && <div style={{ marginTop: 12, color: 'salmon' }}>{msg}</div>}
     </div>
   )
-}
+} */
