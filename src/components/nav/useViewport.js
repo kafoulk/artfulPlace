@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// Hook to determine if the viewport is desktop sized
 const DESKTOP_QUERY = "(min-width: 1024px)"; // ajusta  breakpoint
 // Custom hook to track viewport size
 export default function useViewport() {

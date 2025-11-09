@@ -6,6 +6,11 @@ import { AuthProvider } from "./context/AuthContext";
 import "./styles/index.css";
 import "./styles/global.css";
 import "./styles/auth.css";
+import "./styles/favorites.css";
+import "./styles/home.css";
+import "./styles/profile.css";
+import "./styles/upload.css";
+
 
 
 // Render the root component
