@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 //  web apps Firebase configuration
 const firebaseConfig = {
@@ -12,6 +13,7 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
+
 
 // Log variables for debugging
 console.log("[ENV] API_KEY:", import.meta.env.VITE_FIREBASE_API_KEY);
@@ -29,11 +31,16 @@ console.log("[ENV] CONFIG:", {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// Initialize Firebase Authentication and Firestore
+
+// initialize Firebase Authentication and Firestore
 export const auth = getAuth(app);
-// Initialize Firestore database
+
+// initialize Firestore database
 export const db = getFirestore(app);
-// Set up Google Auth Provider
+
+export const storage = getStorage(app);
+
+// set up Google Auth Provider
 export const googleProvider = new GoogleAuthProvider();
 
 // parameters for Google Auth

@@ -17,15 +17,14 @@ import "./styles/upload.css";
 ReactDOM.createRoot(document.getElementById("root")).render(
 
 
-  // Wrap the app with routing and authentication context providers
+  // Wrap with router and authprovider
   <React.StrictMode>
 
-{/* // Routing provider */}
   <BrowserRouter>
 
-{/* // Authentication context provider */}
+{/*authentication  provider */}
       <AuthProvider>
-        {/* // Main application component */}
+        {/* main application component */}
         <App />
       </AuthProvider>
 

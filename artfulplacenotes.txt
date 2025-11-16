@@ -39,3 +39,16 @@ Embed code in the <head> of your html
 navbar
 I used as reference this option i fund in google:
 https://www.google.com/search?q=how+create+a+nav+bar+in+react+vite&sca_esv=450f4d81728ff678&sxsrf=AE3TifMhLtp-9vzLNi1zr2ju3Qm6-ZAq3A%3A1762202265878&ei=mRIJaceoNb2x6-AP2I6zsA4&ved=0ahUKEwiH2dGA69aQAxW92BoGHVjHDOYQ4dUDCBE&uact=5&oq=how+create+a+nav+bar+in+react+vite&gs_lp=Egxnd3Mtd2l6LXNlcnAiImhvdyBjcmVhdGUgYSBuYXYgYmFyIGluIHJlYWN0IHZpdGUyBxAjGLACGCcyBhAAGBYYHjIFEAAY7wUyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogQyCBAAGIAEGKIESNAhUKUOWMUecAB4ApABAZgBxwGgAe8PqgEEMTkuM7gBA8gBAPgBAZgCCKACywXCAgQQABhHmAMA4gMFEgExIECIBgGQBgiSBwM2LjKgB7WvAbIHAzUuMrgHxgXCBwUwLjUuM8gHFA&sclient=gws-wiz-serp
+
+===============================================================================\
+profile references 
+
+https://www.youtube.com/watch?v=PKwu15ldZ7k
+https://firebase.google.com/docs/auth/web/manage-users
+https://firebase.google.com/docs/storage/web/upload-files
+https://github.com/zpao/qrcode.react
+https://www.npmjs.com/package/qrcode.react
+https://www.linkedin.com/pulse/how-easily-generate-qr-codes-react-aayush-vashist-nnouf/
+https://www.frontendmentor.io/solutions/link-sharing-app-using-react-and-firebase-dUZUNlpkwO
+https://www.robinwieruch.de/complete-firebase-authentication-react-tutorial/
+=========================================================================================

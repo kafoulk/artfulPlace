@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import NavbarTop from "../components/nav/NavbarTop";
 import NavbarBottom from "../components/nav/NavbarBottom";
-// Layout component for private routes (header, footer, and main content area)
+// Layout component for private routes header, footer, and main content area
 export default function PrivateLayout() {
   // render the layout structure
   return (

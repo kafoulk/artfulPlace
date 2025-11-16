@@ -25,7 +25,7 @@ export function FirebaseProvider({ children }) {
       setApp(a); setAuth(_auth); setDb(_db)
 
       const unsub = onAuthStateChanged(_auth, (u) => { setUser(u); setAuthReady(true) })
-      // try anonymous sign-in if not signed in
+      // try anonymous signin if not signed in
       if (!_auth.currentUser) signInAnonymously(_auth).catch(e => setError(e.message))
       return () => unsub()
     } catch (err) {

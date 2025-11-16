@@ -1,43 +1,59 @@
-// import necessary modules and components
 import { Routes, Route } from "react-router-dom";
 
-// import public pages no authentication required
+// public screens sin autenticacion
 import LoginScreen from "./screens/LoginScreen";
 import SignupScreen from "./screens/SignupScreen";
 
-// import private pages authentication required
+// private screens requieren login
 import HomeScreen from "./screens/HomeScreen";
 import UploadScreen from "./screens/UploadScreen";
 import FavoritesScreen from "./screens/FavoritesScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import EditProfileScreen from "./screens/EditProfileScreen";
 
-// import components for route protection and layout
+// Layout y protección
 import ProtectedRoute from "./components/ProtectedRoute";
 import PrivateLayout from "./layouts/PrivateLayout";
 
+
+// main app component with routing
 export default function App() {
-  
+
+  // define routes
   return (
     <Routes>
-     
+      {/*  públicas */}
       <Route path="/login" element={<LoginScreen />} />
       <Route path="/signup" element={<SignupScreen />} />
 
-   
+      {/*  privadas dentro del layout */}
       <Route
         path="/"
         element={
           <ProtectedRoute>
             <PrivateLayout />
           </ProtectedRoute>
-        } >
+        }>
 
-        <Route index element={<HomeScreen />} /> 
+
+    {/* /  home */}
+        <Route index element={<HomeScreen />} />
+
+      {/* / upload */}
         <Route path="upload" element={<UploadScreen />} />
+
+        {/*  / favorites */}
         <Route path="favorites" element={<FavoritesScreen />} />
+
+        {/* /profile */}
         <Route path="profile" element={<ProfileScreen />} />
 
+        {/* /profile/edit */}
+     <Route path="profile/edit" element={<EditProfileScreen />} />
+        
       </Route>
+
     </Routes>
+
   );
 }
