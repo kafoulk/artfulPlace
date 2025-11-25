@@ -25,3 +25,22 @@ export async function uploadUserImage(uid, file, type) {
   const url = await getDownloadURL(storageRef);
   return url;
 }
+
+//upload file
+export async function uploadProjectFile(uid, file) {
+
+  const safeName = file.name.replace(/\s+/g, "-").toLowerCase();
+  
+  const path = `projects/${uid}/${Date.now()}-${safeName}`;
+
+      const storageRef = ref(storage, path);
+  await uploadBytes(storageRef, file);
+  const url = await getDownloadURL(storageRef);
+
+  return {
+    url,
+    path,
+    contentType: file.type,
+    name: file.name,
+  };
+}

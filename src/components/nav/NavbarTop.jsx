@@ -16,7 +16,7 @@ export default function NavbarTop() {
 
        <div className="navt-center">
         
-          {/* <NavLink to="/" end className={({ isActive }) => "navt-link " + (isActive ? "is-active" : "")}>Home</NavLink> */}
+          <NavLink to="/" end className={({ isActive }) => "navt-link " + (isActive ? "is-active" : "")}>Home</NavLink> 
           <NavLink to="/upload" className={({ isActive }) => "navt-link " + (isActive ? "is-active" : "")}>Upload Project</NavLink>
           <NavLink to="/favorites" className={({ isActive }) => "navt-link " + (isActive ? "is-active" : "")}>Favorites</NavLink>
           <NavLink to="/profile" className={({ isActive }) => "navt-link " + (isActive ? "is-active" : "")}>Profile</NavLink>
