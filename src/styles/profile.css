@@ -20,21 +20,22 @@ p, span, a, li, button, input, label {
 /* base layout */
 
 .profile-root {
-  min-height: 100dvh;
+ min-height: 100dvh;
   background: var(--color-base);
   display: flex;
   justify-content: center;
-  padding: 24px 16px 80px;
+  margin-bottom: 40px;
+
 }
 
 .profile-card {
   width: 100%;
-  max-width: 1120px;    
+  max-width: 1240px;    
   margin: 0 auto;
   background: #FFFFFF;
   border: none;
-  padding: 24px 16px 32px;
-  border-radius: 0;     
+  margin-top: 20px;
+     
 }
 
 /* controla las columnas */
@@ -42,6 +43,7 @@ p, span, a, li, button, input, label {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  
 }
 
 /* columnas  */
@@ -281,7 +283,7 @@ font-size: 14px;
 
   height: 50px;
   width: 100%;
-  max-width: 360px;
+  
   border-radius: 8px;
   cursor: pointer;
   font-weight: 400;
@@ -295,12 +297,10 @@ font-size: 14px;
 
 @media (max-width: 640px) {
 
-  .profile-root {
-    padding: 24px 16px 72px;
-  }
+  
 
  .profile-card {
-  padding: 24px 12px 32px;
+  
     border-radius: 20px;
   }
 
@@ -335,13 +335,10 @@ font-size: 14px;
 /* breakpoint tablet  641px – 1024px*/
 
 @media (min-width: 641px) and (max-width: 1024px) {
-  .profile-root {
-    padding: 32px 24px 96px;
-  }
-
+  
 .profile-card {
     border-radius: 24px;
-    padding: 32px 32px 40px;
+    
   }
 
   .profile-layout {
@@ -381,12 +378,11 @@ font-size: 14px;
 
   .profile-layout {
 
- width: min(1225px, 82vw);
+ width: min(1240px, 82vw);
     display: grid;
  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     column-gap: 40px;
     align-items: flex-start;
-    margin-left: -65px;
   }
 
   .profile-banner {
@@ -452,14 +448,18 @@ font-size: 14px;
 
 
 .profile-edit-root {
+ min-height: 100dvh;
+  background: var(--color-base);
   display: flex;
   justify-content: center;
-  padding-top: 30px;
 }
 .profile-edit-card {
   width: 100%;
-  max-width: 1240px;          
-  background: #ffffff;
+  max-width: 1240px;    
+  margin: 0 auto;
+  background: #FFFFFF;
+  border: none;
+  margin-top: 20px;
   
 }
 .profile-edit-title{
@@ -562,7 +562,10 @@ height: 44px;
     border-radius: 12px;
     padding: 18px 16px 20px;
   }
-
+ 
+.profile-root {
+    padding: 20px;
+  }
   .profile-qr-card{
     flex-direction: column;
     align-items: flex-start;
@@ -577,7 +580,7 @@ height: 44px;
   .profile-card,
   .profile-edit-card{
 
-    width: min(720px, 96vw);
+    width: min(920px, 96vw);
   }
 
 }
@@ -700,23 +703,31 @@ height: 44px;
 @media (max-width: 1024px) {
   .profile-edit-card {
     max-width: 100%;    
-    padding: 24px 24px 24px;
+    
   }
 
   .profile-edit-header-row {
     padding-left: 30px;      
   }
 }
+@media (min-width: 641px) and (max-width: 1024px){
 
+
+  .profile-edit-card{
+
+    width: min(920px, 96vw);
+  }
+
+}
 /* mobile */
 @media (max-width: 768px) {
   .profile-edit-root {
-    padding: 24px;
+    padding: 20px;
   }
 
   .profile-edit-card {
     max-width: 100%;
-    border-radius: 20px;
+    
   }
 
 

@@ -10,6 +10,7 @@ log in with gmail: artfulplace07@gmail.com
 
 
 ==============================================================================
+
 - Fonts:
 Embed code in the <head> of your html
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,12 +36,13 @@ Embed code in the <head> of your html
 }
 ==============================================================================
 
-
 navbar
 I used as reference this option i fund in google:
+
 https://www.google.com/search?q=how+create+a+nav+bar+in+react+vite&sca_esv=450f4d81728ff678&sxsrf=AE3TifMhLtp-9vzLNi1zr2ju3Qm6-ZAq3A%3A1762202265878&ei=mRIJaceoNb2x6-AP2I6zsA4&ved=0ahUKEwiH2dGA69aQAxW92BoGHVjHDOYQ4dUDCBE&uact=5&oq=how+create+a+nav+bar+in+react+vite&gs_lp=Egxnd3Mtd2l6LXNlcnAiImhvdyBjcmVhdGUgYSBuYXYgYmFyIGluIHJlYWN0IHZpdGUyBxAjGLACGCcyBhAAGBYYHjIFEAAY7wUyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogQyCBAAGIAEGKIESNAhUKUOWMUecAB4ApABAZgBxwGgAe8PqgEEMTkuM7gBA8gBAPgBAZgCCKACywXCAgQQABhHmAMA4gMFEgExIECIBgGQBgiSBwM2LjKgB7WvAbIHAzUuMrgHxgXCBwUwLjUuM8gHFA&sclient=gws-wiz-serp
 
 ===============================================================================\
+
 profile references 
 
 https://www.youtube.com/watch?v=PKwu15ldZ7k
@@ -51,4 +53,42 @@ https://www.npmjs.com/package/qrcode.react
 https://www.linkedin.com/pulse/how-easily-generate-qr-codes-react-aayush-vashist-nnouf/
 https://www.frontendmentor.io/solutions/link-sharing-app-using-react-and-firebase-dUZUNlpkwO
 https://www.robinwieruch.de/complete-firebase-authentication-react-tutorial/
+
 =========================================================================================
+
+upload screen references
+
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reset
+https://react.dev/learn/responding-to-events
+https://firebase.google.com/docs/firestore/manage-data/add-data
+https://firebase.google.com/docs/storage/web/upload-files
+https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL_static
+https://react-dropzone.js.org/#!/Opening%20File%20Dialog%20Programmatically
+https://react-dropzone.js.org/
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation
+https://react-popup.elazizi.com/getting-started
+
+
+=========================================================================================
+
+home and favorite references
+
+https://mui.com/material-ui/react-text-field/#search-input
+https://api.reactrouter.com/v7/functions/react_router.useNavigate.html
+https://firebase.google.com/docs/firestore/manage-data/delete-data
+https://firebase.google.com/docs/firestore/manage-data/add-data#update-data
+https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout
+https://react.dev/reference/react/useMemo
+https://react.dev/reference/react/useEffect
+https://firebase.google.com/docs/firestore/query-data/indexing
+https://firebase.google.com/docs/firestore/query-data/listen
+https://firebase.google.com/docs/firestore/query-data/get-data#get_a_document
+https://firebase.google.com/docs/firestore/query-data/get-data
+
+https://firebase.google.com/docs/reference/js/firestore_.timestamp#tomillis
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+https://stackoverflow.com/questions/10123953/how-to-sort-an-object-array-by-date-property
+
+============================================================================================

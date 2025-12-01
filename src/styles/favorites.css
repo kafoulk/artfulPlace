@@ -1,0 +1,241 @@
+:root {
+  --color-primary: #7766C6;
+  --color-dark-purple: #46467A;
+  --color-secondary: #FFC212;
+  --color-tertiary: #F9B0C3;
+  --color-base: #ffffff;
+  --color-medium-purple: #E0DFFD;
+  --color-gray-light: #D9D9D9;
+}
+/* tipografía base */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+p, span, a, li, button, input, label {
+  font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+
+}
+.favorites-root {
+  min-height: 100dvh;
+  background: var(--color-base);
+  display: flex;
+  justify-content: center;
+}
+
+.favorites-card {
+ width: 100%;
+  max-width: 1240px;    
+  margin: 0 auto;
+  background: #FFFFFF;
+  border: none;
+}
+
+.favorites-header h1 {
+  font-weight: 500;
+  color: var(--color-dark-purple);
+  margin-bottom: 4px;
+}
+
+.favorites-header p {
+  margin: 0 0 24px;
+  color: var(--color-tertiary);
+}
+
+/* search */
+.favorites-search-wrapper {
+ margin-top: 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  
+}
+
+.favorites-search-input {
+ width: 100%;
+  border-radius: 999px;
+  border: none;
+  background: #ffffff;
+  padding: 10px 40px 10px 40px;
+  font-size: 14px;
+  outline: none;
+    box-shadow: -1px 1px 8px rgba(0,0,0,0.17);
+}
+
+.favorites-search-input::placeholder {
+  color: var(--color-gray-light);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.favorites-search-icon {
+  position: absolute;
+ 
+  left: 16px;
+  width: 16px;
+  height: 16px;
+  opacity: 0.6;
+}
+
+.favorites-search-clear {
+  
+  position: absolute;
+  right: 12px;
+  border: none;
+ background: transparent;
+ 
+ padding: 4px;
+  cursor: pointer;
+}
+
+.favorites-search-clear img {
+
+  width: 14px;
+height: 14px;
+  opacity: 0.7;
+}
+
+/* estados */
+.favorites-loading-text,
+.favorites-empty-text {
+  color: var(--color-base);
+  margin-top: 8px;
+}
+
+/* grid */
+.favorites-projects-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+
+@media (max-width: 640px){
+  .favorites-root{
+    padding: 35px;
+  }
+  
+}
+/* tablet */
+@media (min-width: 768px) {
+  .favorites-projects-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+/* .favorites-root{
+    
+} */
+}
+
+@media (min-width: 641px) and (max-width: 1024px){
+
+
+  .favorites-card{
+
+    width: min(920px, 96vw);
+  }
+}
+/* web */
+@media (min-width: 1024px) {
+  .favorites-projects-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+
+/* card */
+.favorites-project-card {
+
+   background: #ffffff;
+  height: 285px;
+  border-radius: 8px;
+ box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 20px 20px 20px;
+cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+
+
+}
+
+.favorites-project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+}
+
+.favorites-project-thumb {
+  position: relative;
+  border-radius: 10px;
+overflow: hidden;
+  background: #ffffff;
+
+height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favorites-project-img {
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* placeholder 3d project */
+.favorites-project-placeholder {
+ 
+  width: 60px;
+  height: 60px;
+     border-radius: 16px;
+ background: #fff7d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+  font-weight: 600;
+ color: var(--color-secondary);
+  font-size: 18px;
+}
+
+.favorites-project-placeholder span {
+
+  padding: 10px 18px;
+  border-radius: 16px;
+  font-weight: 600;
+}
+
+/* heart button */
+.favorites-fav-btn {
+ 
+  position: absolute;
+ top: 10px;
+  right: 10px;
+  border: none;
+    width: 32px;
+  height: 32px;
+  background: #ffffff;
+  border-radius: 999px;
+  padding: 6px;
+  
+  box-shadow: -1px 1px 8px rgba(0,0,0,0.12);
+  cursor: pointer;
+}
+
+.favorites-fav-icon {
+  
+  width: 18px;
+  height: 18px;
+}
+
+/* project name */
+.favorites-project-name {
+
+margin-top: 10px;
+  
+font-size: 14px;
+  font-weight: 400;
+  color: var(--color-dark-purple);
+}

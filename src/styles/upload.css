@@ -233,11 +233,12 @@ height: 44px;
 @media (max-width: 640px) {
 
   .upload-root{
-    padding: 30px  ;
+    padding: 35px;
   }
   .upload-card {
   max-width: 100%;
-  margin-bottom: 24px;
+  
+  
   }
   .upload-cancel-btn{
   margin-bottom: 10px;
@@ -245,9 +246,9 @@ height: 44px;
 }
 @media (max-width: 768px) {
 
-  .upload-root{
-    padding: 30px  ;
-  }
+  /* .upload-root{
+   
+  } */
   .upload-card {
   max-width: 100%;
   margin-bottom: 24px;
@@ -268,7 +269,7 @@ height: 44px;
 
   .upload-card{
 
-    width: min(720px, 96vw);
+    width: min(920px, 96vw);
   }
 
 }
@@ -303,8 +304,9 @@ padding: 24px 18px;
 }
 
 .popup-saved p {
+
   margin: 0;
   font-size: 16px;
   font-weight: 500;
-  color: #4A4A4A;
+  color: var(--color-dark-purple);
 }

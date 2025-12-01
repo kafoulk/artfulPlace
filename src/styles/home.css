@@ -1,0 +1,264 @@
+:root {
+  --color-primary: #7766C6;
+  --color-dark-purple: #46467A;
+  --color-secondary: #FFC212;
+  --color-tertiary: #F9B0C3;
+  --color-base: #ffffff;
+  --color-medium-purple: #E0DFFD;
+  --color-gray-light: #D9D9D9;
+}
+/* tipografía base */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+p, span, a, li, button, input, label {
+  font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+
+}
+.home-root {
+  min-height: 100dvh;
+  background: var(--color-base);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+
+}
+
+.home-card {
+ 
+  width: 100%;
+  max-width: 1240px;
+}
+
+/* header */
+
+.home-header {
+  
+  display: flex;
+  
+flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+
+
+.home-subtitle {
+  
+font-size: 14px;
+  color: var(--color-gray-light);
+}
+
+/* search bar */
+
+.home-search-wrapper {
+  
+  margin-top: 12px;
+position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.home-search-input {
+ 
+  width: 100%;
+  border-radius: 999px;
+  border: none;
+  
+background: #ffffff;
+  padding: 10px 40px 10px 40px;
+  font-size: 14px;
+  outline: none;
+    box-shadow: -1px 1px 8px rgba(0,0,0,0.17);
+
+}
+.home-search-input::placeholder {
+ 
+  color: var(--color-gray-light);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.home-search-icon {
+ 
+  position: absolute;
+  left: 16px;
+  
+    width: 16px;
+  height: 16px;
+  opacity: 0.6;
+}
+
+.home-search-clear {
+  position: absolute;
+  right: 12px;
+  border: none;
+    background: transparent;
+  
+    padding: 4px;
+  cursor: pointer;
+}
+
+.home-search-clear img {
+
+  width: 14px;
+  height: 14px;
+  opacity: 0.7;
+}
+
+/* projects section */
+
+.home-projects-section {
+
+  margin-top: 30px;
+}
+
+.home-section-title {
+
+  font-weight: 500;
+  color: var(--color-dark-purple);
+  margin-bottom: 16px;
+}
+
+.home-loading-text,
+.home-empty-text {
+
+  font-size: 14px;
+  color: #8a8a8a;
+}
+
+
+
+.home-projects-grid {
+  display: grid;
+  gap: 16px;
+}
+
+@media (max-width: 640px){
+  .home-root{
+    padding: 35px;
+    margin-bottom: 30px;
+  }
+}
+/* Phone 2 por fila */
+@media (max-width: 767px) {
+  .home-projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* tablet y web 4 por fila */
+@media (min-width: 768px) {
+  .home-projects-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (min-width: 641px) and (max-width: 1024px){
+
+
+  .home-card{
+
+    width: min(920px, 96vw);
+  }
+}
+/* card */
+
+.home-project-card {
+ 
+  background: #ffffff;
+  height: 285px;
+ 
+  border-radius: 8px;
+ 
+   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 20px 20px 20px;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.home-project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* thumb */
+
+.home-project-thumb {
+
+  position: relative;
+   
+  border-radius: 10px;
+     overflow: hidden;
+  background: #ffffff;
+  height: 220px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-project-placeholder {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+
+background: #fff7d6;
+  
+display: flex;
+  align-items: center;
+ 
+  justify-content: center;
+  font-weight: 600;
+ 
+  color: var(--color-secondary);
+  font-size: 18px;
+}
+
+/* heart button */
+
+.home-fav-btn {
+
+position: absolute;
+  
+ top: 10px;
+   right: 10px;
+  border: none;
+ 
+  background: #ffffff;
+  border-radius: 999px;
+ 
+ 
+  width: 32px;
+    height: 32px;
+  display: flex;
+    
+    align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.home-fav-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* nombre del proyecto */
+
+.home-project-name {
+
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-dark-purple);
+}
