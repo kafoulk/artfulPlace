@@ -10,6 +10,7 @@ import UploadScreen from "./screens/UploadScreen";
 import FavoritesScreen from "./screens/FavoritesScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import EditProfileScreen from "./screens/EditProfileScreen";
+import ProjectScreen from "./screens/ProjectScreen";
 
 // Layout y protección
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -31,7 +32,9 @@ export default function App() {
         path="/"
         element={
           <ProtectedRoute>
-            <PrivateLayout />
+            <PrivateLayout >
+              <ProjectScreen />
+            </PrivateLayout >
           </ProtectedRoute>
         }>
 
@@ -44,6 +47,8 @@ export default function App() {
 
         {/*  / favorites */}
         <Route path="favorites" element={<FavoritesScreen />} />
+
+        <Route path="project/:projectId" element={<ProjectScreen />} />
 
         {/* /profile */}
         <Route path="profile" element={<ProfileScreen />} />

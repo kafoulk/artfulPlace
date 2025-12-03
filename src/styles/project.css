@@ -1,0 +1,178 @@
+/* --- Layout and Container --- */
+.project-root {
+    display: flex; 
+    justify-content: center;
+    align-items: flex-start;
+    padding: 35px 20px;
+}
+
+.project-card {
+    margin-left: auto;
+    margin-right: auto;
+    
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 600px; 
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Header Section (Back and Delete) --- */
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px var(--mobile-padding); 
+    padding-bottom: 10px; 
+}
+
+.project-back-btn, .project-delete-btn {
+    background: none;
+    border: none;
+    padding: 8px; 
+    cursor: pointer;
+    color: var(--text-color-dark);
+}
+
+.project-back-btn img, .project-delete-btn img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+/* --- Project Thumbnail --- */
+.project-thumbnail {
+    width: 100%;
+    aspect-ratio: 16 / 10; 
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #999;
+    font-size: 16px;
+    background-color: #e5e5e5;
+}
+
+/* --- Project Details --- */
+.project-details {
+    padding: 20px var(--mobile-padding);
+    padding-bottom: 30px; 
+}
+
+.project-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.project-name {
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--text-color-dark);
+    margin: 0;
+    flex-grow: 1;
+}
+
+.project-share-btn {
+    background: none;
+    border: none;
+   
+    padding: 10px; 
+    cursor: pointer;
+    align-self: flex-start; 
+}
+
+
+.project-creator-info {
+    font-size: 14px;
+    color: var(--color-tertiary);
+    margin-bottom: 15px;
+    font-weight: 400; 
+}
+
+.project-creator-name {
+    font-weight: 500; 
+    color: var(--color-dark-purple);
+}
+
+.project-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color-medium);
+    margin-bottom: 0;
+    white-space: pre-wrap;
+}
+
+/* --- Footer Action Buttons --- */
+.project-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+    padding: 0 var(--mobile-padding) var(--mobile-padding) var(--mobile-padding);
+}
+
+.project-ar-btn {
+    background-color: var(--color-primary);
+    color: var(--color-medium-purple); 
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+
+    padding: 14px 20px; 
+    flex-grow: 1;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.project-share-btn {
+    display: flex;
+}
+.project-action-btn {
+    background-color: var(--color-base); 
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: box-shadow 0.2s;
+}
+
+.project-action-btn:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-action-btn img {
+    width: 30px;
+    height: 30px;
+}
+/* --- Responsive Adjustments --- */
+@media (max-width: 640px) {
+    .project-root {
+    
+        padding: 35px 0;
+    }
+    .project-card {
+        border-radius: 0;
+    }
+}
