@@ -24,6 +24,7 @@ p, span, a, li, button, input, label {
   background: var(--color-base);
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 .favorites-card {

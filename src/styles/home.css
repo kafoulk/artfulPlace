@@ -56,12 +56,12 @@ font-size: 14px;
 /* search bar */
 
 .home-search-wrapper {
-  
-  margin-top: 12px;
-position: relative;
+  flex: 1;          
+  position: relative;
   display: flex;
   align-items: center;
 }
+
 
 .home-search-input {
  
@@ -105,10 +105,104 @@ background: #ffffff;
 
 .home-search-clear img {
 
-  width: 14px;
-  height: 14px;
+  width: 17px;
+  height: 17px;
   opacity: 0.7;
 }
+
+.home-search-input {
+ 
+  width: 100%;
+  border-radius: 999px;
+  border: none;
+  
+background: #ffffff;
+  padding: 10px 40px 10px 40px;
+  font-size: 14px;
+  outline: none;
+    box-shadow: -1px 1px 8px rgba(0,0,0,0.17);
+
+}
+/* search and filter row */
+.home-search-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+
+/* Contenedor del filtro */
+.home-filter-wrapper {
+ position: relative;
+
+}
+
+/* Botón del filtro (iconito) */
+.home-filter-btn {
+  width: 60px;
+  height: 46px;
+  border-radius: 999px;
+  border: none;
+  background: var(--color-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+    box-shadow: -1px 1px 8px rgba(0,0,0,0.17);
+}
+
+.home-filter-btn img {
+  width: 17px;
+  height: 17px;
+}
+
+/* estado activo (cuando hay filtro aplicado) */
+.home-filter-btn-active {
+  background: var(--color-secondary);
+}
+
+.home-filter-btn-active img {
+  filter: brightness(0) invert(1);
+}
+
+/* dropdown de opciones */
+.home-filter-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #ffffff;
+  border-radius: 8px;
+    box-shadow: -1px 1px 8px rgba(0,0,0,0.17);
+  padding: 8px 0;
+  min-width: 180px;
+  z-index: 20;
+    margin-top: 15px;
+
+}
+
+.home-filter-option {
+  width: 100%;
+  padding: 8px 14px;
+  text-align: left;
+  font-size: 0.875rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--color-dark-purple);
+}
+
+.home-filter-option:hover {
+  background: #ffffff;
+}
+
+.home-filter-option.active {
+  font-weight: 500;
+  color: var(--color-secondary);
+  background: #ffffff;
+}
+
 
 /* projects section */
 

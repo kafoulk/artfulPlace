@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { QRCodeCanvas } from "qrcode.react";
 import "../styles/profile.css";
+import "../styles/home.css"; 
 
 import instagramIcon from "../assets/instagram-color.svg";
 import linkedinIcon from "../assets/linkedin-color.svg";
@@ -294,62 +295,66 @@ const slug = (displayName || user.displayName || user.email || "user")
           {/* recent projects \ sign out */}
           <div className="profile-col profile-col-right">
 
-            <section className="profile-projects-card">
+          <section className="profile-projects-card">
+  <h2 className="profile-section-title">Recent Projects</h2>
 
-              <h2 className="profile-section-title">Recent Projects</h2>
+  {loading && (
+    <p className="profile-projects-placeholder">Loading…</p>
+  )}
 
-              {loading && <p className="profile-projects-placeholder">Loading…</p>}
+  {!loading && projects.length === 0 && (
+    <p className="profile-projects-placeholder">No projects yet.</p>
+  )}
 
-{!loading && projects.length === 0 && (
-  <p className="profile-projects-placeholder">No projects yet.</p>
-)}
+  <div className="home-projects-grid home-projects-grid--profile">
+    {projects.map((p) => {
+      const name = p.projectName || p.name || "Project";
+      const isFav = favoriteIds.has(p.id);
+      const isImage =
+        typeof p.fileType === "string" && p.fileType.startsWith("image/");
 
-<div className="profile-projects-grid">
-  {projects.map((p) => {
-    const name = p.projectName || p.name || "Project";
-    const isFav = favoriteIds.has(p.id);
-    const isImage =
-      typeof p.fileType === "string" && p.fileType.startsWith("image/");
-
-    return (
-      <article
-        key={p.id}
-        className="profile-project-card"
-        onClick={() => navigate(`/project/${p.id}`)}
-      >
-        <div className="profile-project-thumb">
-          {isImage && p.fileUrl ? (
-            <img src={p.fileUrl} alt={name} />
-          ) : (
-            <div className="profile-project-placeholder">
-              <span>3D</span>
-            </div>
-          )}
-
-        <button
-          type="button"
-          className="favorites-fav-btn"
-          onClick={(e) => toggleFavorite(p.id, e)}
-          aria-label={isFav ? "Remove from favorites" : "Add to favorites"}
+      return (
+        <article
+          key={p.id}
+          className="home-project-card"
+          onClick={() => navigate(`/project/${p.id}`)}
         >
-          <img
-            src={isFav ? heartFilled : heartOutline}
-            className="favorites-fav-icon"
-            alt=""
-          />
-        </button>
+          <div className="home-project-thumb">
+            {isImage && p.fileUrl ? (
+              <img
+                src={p.fileUrl}
+                alt={name}
+                className="home-project-img"
+              />
+            ) : (
+              <div className="home-project-placeholder">
+                <span>3D</span>
+              </div>
+            )}
 
-        </div>
+            <button
+              type="button"
+              className="home-fav-btn"
+              onClick={(e) => toggleFavorite(p.id, e)}
+              aria-label={
+                isFav ? "Remove from favorites" : "Add to favorites"
+              }
+            >
+              <img
+                src={isFav ? heartFilled : heartOutline}
+                className="home-fav-icon"
+                alt=""
+              />
+            </button>
+          </div>
 
-        <p className="profile-project-name">{name}</p>
-      </article>
-    );
-  })}
-</div>
+          <p className="home-project-name">{name}</p>
+        </article>
+      );
+    })}
+  </div>
+</section>
 
-
-
-            </section>
 
             <div className="profile-signout-row">
 

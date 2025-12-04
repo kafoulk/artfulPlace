@@ -91,4 +91,19 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Null
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
 https://stackoverflow.com/questions/10123953/how-to-sort-an-object-array-by-date-property
 
+=============================================================================================
+
+home and favorite, rules firebase and global changes
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+https://api.reactrouter.com/v7/functions/react_router.useNavigate.html
+https://www.npmjs.com/package/reactjs-popup
+https://firebase.google.com/docs/auth/web/manage-users#get_the_currently_signed-in_user
+https://firebase.google.com/docs/auth/web/manage-users
+https://firebase.google.com/docs/firestore/query-data/listen
+https://firebase.google.com/docs/firestore/query-data/get-data
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+https://react.dev/reference/react
+https://firebase.google.com/docs/firestore/security/get-started
+
 ============================================================================================

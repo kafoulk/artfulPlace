@@ -593,6 +593,19 @@ height: 44px;
 }
 
 
+/* recent projects 2 per collum */
+.home-projects-grid--profile {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 16px;
+}
+
+@media (max-width: 480px) {
+  .home-projects-grid--profile {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
 /* ==edit profile */
 
 .profile-edit-header {
@@ -697,6 +710,92 @@ height: 44px;
     brightness(92%) contrast(92%);
     /* color: var(--color-primary); */
 }
+
+/* delete popup */
+
+.delete-popup {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 24px 32px;
+
+  max-width: 420px;
+  width: 100%;
+
+  box-shadow: -1px 1px 8px rgba(0,0,0,0.17);
+  text-align: left;
+  animation: popupFade 0.2s ease-out;
+}
+
+.delete-popup h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-dark-purple);
+}
+
+.delete-popup p {
+  margin: 0 0 24px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-dark-purple);
+}
+
+.delete-popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.delete-popup-cancel {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+ 
+  background: #f1f1f5;
+  color: var(--color-dark-purple);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.delete-popup-confirm {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
+  background: #e1584b;
+  color: #ffffff;
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+/* animation*/
+@keyframes popupFade {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.profile-edit-delete {
+
+  margin-left: auto;
+  border: none;
+ background: #ffffff;
+  color: #e84040;
+  
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.profile-edit-delete:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
 
 /* tablet / web angosta */
 @media (max-width: 1024px) {

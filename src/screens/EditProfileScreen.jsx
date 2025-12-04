@@ -1,7 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { updateEmail, updatePassword, updateProfile } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
+import { updateEmail, updatePassword, updateProfile, deleteUser } from "firebase/auth";
+import {
+  doc,
+  setDoc,
+  collection,
+  query,
+  where,
+  getDocs,
+  writeBatch,
+  deleteDoc,
+} from "firebase/firestore";
 
 import { useAuth } from "../context/AuthContext";
 import { auth, db } from "../lib/firebase";
@@ -11,6 +20,9 @@ import editIcon from "../assets/edit.svg";
 import defaultAvatar from "../assets/pfp.jpg";
 import defaultBanner from "../assets/banner-p.jpg";
 
+
+import Popup from "reactjs-popup";         
+import "reactjs-popup/dist/index.css";
 
 import "../styles/profile.css";
 
@@ -22,6 +34,10 @@ export default function EditProfileScreen() {
 const [form, setForm] = useState(null);
 const [saving, setSaving] = useState(false);
 const [error, setError] = useState("");
+
+const [showDelete, setShowDelete] = useState(false);
+  const [deleting, setDeleting] = useState(false);
+
 
   // archivos seleccionados
   const [avatarFile, setAvatarFile] = useState(null);
@@ -162,7 +178,7 @@ const authUpdates = {};
         await updatePassword(user, form.password);
       }
 
- //  actualizar firestore profile
+ //  update firestore profile
 
  const ref = doc(db, "users", user.uid);
 
@@ -178,9 +194,10 @@ const authUpdates = {};
 
       await setDoc(ref, newProfile, { merge: true });
 
-  // actualizar contexto
+  // update contexto
   if (setProfile) {
-     setProfile((prev) => ({ ...(prev || {}), ...newProfile }));
+     setProfile((prev) => ({ ...(prev || {}), ...newProfile })
+    );
       }
 
    navigate("/profile");
@@ -202,8 +219,81 @@ const authUpdates = {};
 
   };
 
+// delete account
+const handleDeleteAccount = async () => {
+  if (!user) return;
+
+  setDeleting(true);
+  setError("");
+
+  try {
+    const uid = user.uid;
+
+    //  borrar proyectos del usuario
+
+    const projectsQ = query(
+      collection(db, "projects"),
+      where("userId", "==", uid)
+    );
+    const projectsSnap = await getDocs(projectsQ);
+
+    const batch1 = writeBatch(db);
+    projectsSnap.forEach((docSnap) => {
+
+      batch1.delete(docSnap.ref);
+    }
+);
+
+    await batch1.commit();
+
+    // borrar favoritos del usuario
+    const favsSnap = await getDocs(
+
+      collection(db, "users", uid, "favorites")
+    );
+    const batch2 = writeBatch(db);
+
+    favsSnap.forEach((docSnap) => {
+
+      batch2.delete(docSnap.ref);
+    }
+  );
+    await batch2.commit();
+
+    // borrar documento /users/{uid}
+    const userDocRef = doc(db, "users", uid);
+      await deleteDoc(userDocRef);
+    
+   
+    //  borrar usuario de Auth
+    await deleteUser(user); 
+
+    //  sent to login/signup
+    navigate("/login");
+    } catch (err) {
+      console.error(err);
+      if (err.code === "auth/requires-recent-login") {
+        setError(
+          "Please log out and log in again, then try deleting your account."
+        );
+      } else {
+        setError(err.message || "Error deleting account");
+      }
+    } finally {
+      setDeleting(false);
+      setShowDelete(false);
+    }
+  };
+
+  // use popup
+  const handleConfirmDelete = () => {
+    handleDeleteAccount();
+  };
+
  
   return (
+
+    
 
     <main className="profile-edit-root">
 
@@ -363,6 +453,7 @@ const authUpdates = {};
           {/* linkeiIn */}
 
           <label className="profile-label" htmlFor="linkedin"> LinkedIn URL</label>
+
           <input
             id="linkedin"
             type="text"
@@ -420,24 +511,81 @@ const authUpdates = {};
           {/* botones */}
           
           <div className="profile-edit-actions">
+  <button
+    type="submit"
+    className="profile-edit-save"
+    disabled={saving || deleting}>
+    {saving ? "Saving..." : "Save"}
+  </button>
 
-            <button
-              type="submit"
-              className="profile-edit-save"
-              disabled={saving} >
-              {saving ? "Saving..." : "Save"}
-            </button>
+  <button
+    type="button"
+    className="profile-edit-cancel"
+    onClick={handleCancel}
+    disabled={saving || deleting} > Cancel</button>
 
-            <button
+              <button
               type="button"
-              className="profile-edit-cancel"
-              onClick={handleCancel} >
-              Cancel
-            </button>
+              className="profile-edit-delete"
+              onClick={() => setShowDelete(true)}
+              disabled={saving || deleting} > Delete account </button>
 
-          </div>
+
+    </div>
+
 
         </form>
+
+
+<Popup
+          open={showDelete}
+          modal
+          closeOnDocumentClick={false}
+          contentStyle={{
+            padding: "0",
+            border: "none",
+            background: "transparent",
+            width: "fit-content",
+            margin: "0 auto",
+          }}
+          overlayStyle={{
+            background: "rgba(0,0,0,0.4)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }} >
+
+          <div className="delete-popup">
+
+            <h2>Delete account</h2>
+
+            <p>
+              This will permanently delete your account, your profile, and your
+              projects. This action cannot be undone. Are you sure?
+            </p>
+
+            <div className="delete-popup-actions">
+
+              <button
+                type="button"
+                className="delete-popup-cancel"
+                onClick={() => setShowDelete(false)}
+                disabled={deleting} >Cancel </button>
+
+              <button
+                type="button"
+                className="delete-popup-confirm"
+                onClick={handleConfirmDelete}
+                disabled={deleting} >
+
+                {deleting ? "Deleting..." : "Yes, delete"}
+              </button>
+
+            </div>
+            
+          </div>
+        </Popup>
+
 
 
       </section>
